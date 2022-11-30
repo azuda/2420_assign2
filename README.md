@@ -1,12 +1,6 @@
 # ACIT 2420 Assignment 2
 
-## Repository
-
 *Aaron Zhang - A01316218*
-
-### File Structure
-
-![file structure](images/file_structure.png)
 
 ## Step 1
 
