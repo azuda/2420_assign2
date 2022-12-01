@@ -46,10 +46,13 @@ Do the following procedure for both droplets:
 ### Add User
 
   1. ssh into droplet as root
-  2. Create a new user `useradd -ms /bin/bash <username>`
-  3. Set a password for  user `passwd <username>`
-  4. ssh into the droplet as the new user and set `PermitRootLogin` to `no` in `/etc/ssh/sshd_config`.
-  5. Run `sudo systemctl restart ssh`
+  2. `useradd -ms /bin/bash <username>`
+  3. `usermod -aG sudo <username>`
+  4. `rsync --archive --chown=<username>:<username> ~/.ssh /home/<username>`
+  5. Set password for user `passwd <username>`
+  6. `exit`
+  7. ssh into the droplet as your new user and set `PermitRootLogin` to `no` in `/etc/ssh/sshd_config`.
+  8. `sudo systemctl restart ssh`
 
 ## Step 3
 
